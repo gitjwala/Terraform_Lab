@@ -10,7 +10,7 @@ pipeline {
                 script{
                        dir('terrafrom')
                        {
-                          git "https://github.com/gitjwala/Terraform_Lab"
+                          git "https://github.com/gitjwala/Terraform_Lab.git"
                        }
                 }
             }

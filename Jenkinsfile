@@ -7,19 +7,19 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                   git "https://github.com/gitjwala/Terraform_Lab.git"
+                   git 'https://github.com/gitjwala/Terraform_Lab.git'
                        }
                 }
             
         stage('plan') {
             steps {
-                 sh "terrafrom init"
-                 sh "terrafrom plan"
+                 sh 'terrafomm init'
+                 sh 'terraform plan'
                 }
             }
         stage('Apply') {
             steps {
-                 sh "terrafrom apply --auto-approved"
+                 sh 'terraform apply --auto-approved'
                 }
             }
        }

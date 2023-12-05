@@ -7,23 +7,19 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                script{
-                       dir('terrafrom')
-                       {
-                          git "https://github.com/gitjwala/Terraform_Lab.git"
+                   git "https://github.com/gitjwala/Terraform_Lab.git"
                        }
                 }
             }
-        }
         stage('plan') {
             steps {
-                 sh "pwd;cd terrafrom/ ; terrafrom init"
-                 sh "pwd;cd terrafrom/ ; terrafrom plan"
+                 sh "terrafrom init"
+                 sh "terrafrom plan"
                 }
             }
         stage('Apply') {
             steps {
-                 sh "pwd;cd terrafrom/ ; terrafrom apply -input-false tfplan"
+                 sh "terrafrom apply --auto-approved"
                 }
             }
     }

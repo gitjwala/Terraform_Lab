@@ -10,7 +10,7 @@ pipeline {
                    git "https://github.com/gitjwala/Terraform_Lab.git"
                        }
                 }
-            }
+            
         stage('plan') {
             steps {
                  sh "terrafrom init"
@@ -22,5 +22,6 @@ pipeline {
                  sh "terrafrom apply --auto-approved"
                 }
             }
+       }
     }
-}
+
